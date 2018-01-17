@@ -13,7 +13,6 @@ allprojects {
 ```
 
 # Step 2. Add the dependency
-## For Public Android APP
 
 ```gradle
 dependencies {
@@ -21,3 +20,11 @@ dependencies {
 }
 ```
 
+# Step3. Update AndroidManifest.xml
+```
+    <application ...>
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="your amap api key">
+            //高德开放平台申请的key
+        </meta-data>
+    </application>
+```
