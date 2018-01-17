@@ -1,6 +1,8 @@
 # AmapLiveLocation
 Live Location with AMAP and Android Architecture Component 
 
+[![](https://jitpack.io/v/conanchen/AmapLiveLocation.svg)](https://jitpack.io/#conanchen/AmapLiveLocation)
+
 # Step 1. Add the JitPack repository to your build file
 Add it in your root build.gradle at the end of repositories:
 ```gradle
