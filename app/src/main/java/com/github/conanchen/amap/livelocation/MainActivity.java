@@ -23,7 +23,12 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.text.DateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
+
+import static com.amap.api.location.AMapLocationClientOption.AMapLocationMode.Hight_Accuracy;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +41,16 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        final AmapLiveLocation amapLiveLocation = AmapLiveLocation.builder().setContext(this).build();
+        final AmapLiveLocation amapLiveLocation = AmapLiveLocation.builder()
+                .setContext(this)
+                .setMode(Hight_Accuracy)                       //定位模式，默认值是 Height_Accuracy
+                .setCache(true)                                //缓存策略，默认关闭
+                .setOnceLocationLatest(true)                   //获取最近3s内精度最高的一次定位结果，默认关闭
+                .setNeedAddress(false)                         //返回地址描述，默认开启
+                .setMockEnable(true)                           //外界在定位SDK通过GPS定位时模拟位置，默认关闭
+                .setWifiScan(false)                            //主动刷新设备wifi模块,默认开启
+                .setTimeout(5000)                              //通过网络定位获取结果的超时时间，默认值是 20000
+                .build();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
@@ -47,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Dexter.withActivity(MainActivity.this)
-                                .withPermissions(Manifest.permission.ACCESS_FINE_LOCATION,
-                                        Manifest.permission.ACCESS_COARSE_LOCATION
+                                .withPermissions(Manifest.permission.ACCESS_FINE_LOCATION
+                                        , Manifest.permission.ACCESS_COARSE_LOCATION
                                         , Manifest.permission.READ_PHONE_STATE
                                         , Manifest.permission.READ_EXTERNAL_STORAGE
                                         , Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -60,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
                                         amapLiveLocation.locate().observe(MainActivity.this, new Observer<AMapLocation>() {
                                             @Override
                                             public void onChanged(@Nullable AMapLocation aMapLocation) {
-                                                hello.setText(String.format("(lat,lon)=(%f,%f) address=%s",
+                                                hello.setText(String.format("now:%s@(lat,lon)=(%f,%f) address=%s",
+                                                        DateFormat.getTimeInstance().format(new Date()),
                                                         aMapLocation.getLatitude(), aMapLocation.getLongitude(), aMapLocation.getAddress()));
                                             }
                                         });
