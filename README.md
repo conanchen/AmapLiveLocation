@@ -16,7 +16,7 @@ allprojects {
 
 ```gradle
 dependencies {
-    compile 'com.github.conanchen.gedit-api:grpc-javalite:master-SNAPSHOT'
+    compile 'com.github.User:Repo:Tag'
 }
 ```
 
