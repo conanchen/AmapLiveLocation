@@ -22,9 +22,9 @@ dependencies {
 
 # Step3. Update AndroidManifest.xml
 ```
-    <application ...>
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="your amap api key">
-            //高德开放平台申请的key
-        </meta-data>
-    </application>
+<application ...>
+    <meta-data android:name="com.amap.api.v2.apikey" android:value="your amap api key">
+        //高德开放平台申请的key
+    </meta-data>
+</application>
 ```

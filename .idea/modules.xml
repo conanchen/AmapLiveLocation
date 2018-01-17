@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AMAPLiveLocation.iml" filepath="$PROJECT_DIR$/AMAPLiveLocation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/amap-live-location-library/library.iml" filepath="$PROJECT_DIR$/amap-live-location-library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
     </modules>
   </component>
 </project>
