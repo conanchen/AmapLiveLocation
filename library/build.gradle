@@ -36,7 +36,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     api 'com.amap.api:location:3.4.0'
-    implementation "android.arch.lifecycle:extensions:$arch_version"
+    api "android.arch.lifecycle:extensions:$arch_version"
     annotationProcessor "android.arch.lifecycle:compiler:$arch_version"
 }
 
