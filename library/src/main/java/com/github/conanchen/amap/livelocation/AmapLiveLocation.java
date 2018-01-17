@@ -19,7 +19,7 @@ public class AmapLiveLocation {
                 mAMapLocationClient.setLocationListener(new AMapLocationListener() {
                     @Override
                     public void onLocationChanged(AMapLocation aMapLocation) {
-
+                        postValue(aMapLocation);
                     }
                 });
                 mAMapLocationClient.startLocation();

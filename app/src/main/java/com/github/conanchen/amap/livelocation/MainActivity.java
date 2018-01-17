@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                                         amapLiveLocation.locate().observe(MainActivity.this, new Observer<AMapLocation>() {
                                             @Override
                                             public void onChanged(@Nullable AMapLocation aMapLocation) {
-                                                hello.setText(String.format("(lat,lon)=(%d,%d) address=%s",
+                                                hello.setText(String.format("(lat,lon)=(%f,%f) address=%s",
                                                         aMapLocation.getLatitude(), aMapLocation.getLongitude(), aMapLocation.getAddress()));
                                             }
                                         });

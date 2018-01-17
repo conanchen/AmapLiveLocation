@@ -14,11 +14,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
-    <meta-data
-        android:name="com.amap.api.v2.apikey"
-        android:value="9cdad61030ddacccb4bc6eeb89c4d55a">
-        //高德开放平台申请的key
-    </meta-data>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -36,6 +31,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="9cdad61030ddacccb4bc6eeb89c4d55a">
+            //高德开放平台申请的key
+        </meta-data>
+
     </application>
 
 </manifest>
