@@ -74,9 +74,12 @@ public class MainActivity extends AppCompatActivity {
                                         amapLiveLocation.locate().observe(MainActivity.this, new Observer<AMapLocation>() {
                                             @Override
                                             public void onChanged(@Nullable AMapLocation aMapLocation) {
-                                                hello.setText(String.format("now:%s@(lat,lon)=(%f,%f) address=%s",
+                                                String text = String.format("now:%s@(lat,lon)=(%f,%f) address=%s",
                                                         DateFormat.getTimeInstance().format(new Date()),
-                                                        aMapLocation.getLatitude(), aMapLocation.getLongitude(), aMapLocation.getAddress()));
+                                                        aMapLocation.getLatitude(), aMapLocation.getLongitude(), aMapLocation.getAddress());
+                                                hello.setText(text);
+                                                Snackbar.make(view, text, Snackbar.LENGTH_LONG)
+                                                        .setAction("Action", null).show();
                                             }
                                         });
 

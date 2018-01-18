@@ -18,7 +18,7 @@ allprojects {
 
 ```gradle
 dependencies {
-    compile 'com.github.User:Repo:Tag'
+    compile 'com.github.conanchen:AmapLiveLocation:1.0.3'
 }
 ```
 
